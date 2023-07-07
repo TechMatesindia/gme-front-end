@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import {API_URL} from "./apiConfig"
 
 export default function Result() {
   const location = useLocation();
@@ -11,7 +12,8 @@ export default function Result() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const resp = axios.get("/results/"+id)
+    const url=API_URL+"/results/"
+    const resp = axios.get(url+id)
     .then((resp)=> setmarks(resp.data.marks))
     console.log(marks);
     const p = (marks * 100) / 100;

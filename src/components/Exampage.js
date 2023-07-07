@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Timer from "./Timer";
+import {API_URL} from "./apiConfig"
 
 
 export default function ExamPage(props) {
@@ -24,7 +25,8 @@ export default function ExamPage(props) {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await axios.get("/questions");
+        const url =API_URL+"/questions"
+        const response = await axios.get(url);
         setQuestions(response.data);
         console.log(response.data);
       } catch (error) {
@@ -124,7 +126,8 @@ export default function ExamPage(props) {
     console.log(marks);
     const data = {marks:marks}
     console.log(data);
-    axios.post("/results/"+id,data)
+    const url =API_URL+"/results/"
+    axios.post(url+id,data)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

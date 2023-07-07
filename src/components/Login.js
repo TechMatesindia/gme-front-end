@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import {API_URL} from "./apiConfig"
 
 export default function Login() {
   const navigate = useNavigate();
@@ -24,7 +25,8 @@ export default function Login() {
     data["password"] = password;
     const object = JSON.stringify(data);
     console.log(object);
-    const res= await axios.post("/login", data);
+    const url=API_URL+"/login"
+    const res= await axios.post(url, data);
     if (res.data.message==="Login Successful"){
         navigate("/dashboard/"+res.data.userId,{state:{id:res.data.userId}}, { replace: false });
     }

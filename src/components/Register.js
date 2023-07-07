@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import {API_URL} from "./apiConfig"
 
 export default function Register() {
     const navigate = useNavigate();
@@ -43,7 +44,8 @@ export default function Register() {
     data["DOB"]=DOB;
     data["Contact_No"]=Contact;
     console.log(data);
-    const res=await axios.post("http://localhost:5000/register", data)
+    const url=API_URL+"/register"
+    const res=await axios.post(url, data)
     if(res.data.message==="Registration successful"){
         navigate("/login", { replace: false })
     }else{

@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import axios from "axios";
+import {API_URL} from "./apiConfig"
 export default function Dashboard(props) {
   const navigate = useNavigate();
   const location = useLocation();
@@ -51,7 +52,8 @@ export default function Dashboard(props) {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/user/" + id);
+        const url=API_URL+"/user/"
+        const response = await axios.get(url + id);
         setdata(response.data);
       } catch (error) {
         console.error(error);
@@ -83,8 +85,8 @@ export default function Dashboard(props) {
     formData.append('salgoal3', salgoal3);
     formData.append('company', company);
     formData.append('image', image);
-
-    fetch("/updateprofile/" + id, {
+    const url=API_URL+"/updateprofile/"
+    fetch(url + id, {
       method: 'PATCH',
       body: formData,
     })

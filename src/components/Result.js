@@ -28,12 +28,12 @@ export default function Result() {
   });
 
 
-  const handleRegister = () => {
-    navigate('/register', { replace: false });
+  const handleDashboard = () => {
+    navigate('/dashboard/'+id,{state:{id:id},replace: true});
   };
 
-  const handleAdmin = () => {
-    navigate('/admin', { replace: false });
+  const handleLogout = () => {
+    navigate('/login', { replace: true });
   };
 
   return (
@@ -43,11 +43,11 @@ export default function Result() {
           <img src={require('../static/img/logo1.png')} alt="" id="logo" />
         </div>
         <div className="NavItems">
-          <button className="NavBtn" onClick={handleRegister}>
-            Register
+          <button className="NavBtn" onClick={handleDashboard}>
+            Dashboard
           </button>
-          <button className="NavBtn" onClick={handleAdmin}>
-            Admin
+          <button className="NavBtn" onClick={handleLogout}>
+            Logout
           </button>
         </div>
       </div>

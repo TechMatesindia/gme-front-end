@@ -62,7 +62,7 @@ export default function Dashboard(props) {
     fetchUserData();
   }, []);
   const handleclickattempt = () => {
-    navigate("/instructions",{state:{id:id}}, { replace: false });
+    navigate("/instructions",{state:{id:id},replace: false});
   };
   const handleLogout = () => {
     navigate("/login", { replace: true });
@@ -91,7 +91,7 @@ export default function Dashboard(props) {
       body: formData,
     })
     alert('update successful')
-    // navigate('/login')
+    window.location.reload()
   };
 
   const handletabchange1 = () => {
@@ -155,117 +155,127 @@ export default function Dashboard(props) {
           <div id="Profile">
             <div className="profileheader">
               <div className="profilehead">
-                <h1
+                <div
                   style={{
-                    color: "rgb(230, 140, 15)",
-                    justifyContent: "start",
-                    display: "flex",
-                    paddingLeft: "20px",
-                    fontSize: "40px",
+                    display:"flex",
+                    flexDirection:"row",
+                    height:"40px",
+                    width:"100%",
+                    justifyContent:"start"
                   }}
                 >
-                  Name : {data.name}
-                </h1>
-                <h2
+                  <div className="profiledata">Name </div><div className="profiledata">: {data.name}</div>
+                </div>
+                <div
                   style={{
-                    color: "rgb(230, 140, 15)",
-                    justifyContent: "start",
-                    display: "flex",
-                    paddingLeft: "20px",
+                    display:"flex",
+                    flexDirection:"row",
+                    height:"40px",
+                    width:"100%",
+                    justifyContent:"start"
                   }}
                 >
-                  Email : {data.email}
-                </h2>
-                <h2
+                  <div className="profiledata">Email</div> <div className="profiledata">: {data.email}</div>
+                </div>
+                <div
                   style={{
-                    color: "rgb(230, 140, 15)",
-                    justifyContent: "start",
-                    display: "flex",
-                    paddingLeft: "20px",
+                    display:"flex",
+                    flexDirection:"row",
+                    height:"40px",
+                    width:"100%",
+                    justifyContent:"start"
                   }}
                 >
-                  DOB : {data.DOB}
-                </h2>
-                <h2
+                  <div className="profiledata">DOB</div> <div className="profiledata">: {data.DOB}</div>
+                </div>
+                <div
                   style={{
-                    color: "rgb(230, 140, 15)",
-                    justifyContent: "start",
-                    display: "flex",
-                    paddingLeft: "20px",
+                    display:"flex",
+                    flexDirection:"row",
+                    height:"40px",
+                    width:"100%",
+                    justifyContent:"start"
                   }}
                 >
-                  Contact no. : {data.Contact_No}
-                </h2>
-                <h2
+                  <div className="profiledata">Contact no.</div> <div className="profiledata">: {data.Contact_No}</div>
+                </div>
+                <div
                   style={{
-                    color: "rgb(230, 140, 15)",
-                    justifyContent: "start",
-                    display: "flex",
-                    paddingLeft: "20px",
+                    display:"flex",
+                    flexDirection:"row",
+                    height:"40px",
+                    width:"100%",
+                    justifyContent:"start"
                   }}
                 >
-                  Experience : {data.Experience} years
-                </h2>
-                <h2
+                  <div className="profiledata">Experience</div> <div className="profiledata">: {data.Experience} years</div>
+                </div>
+                <div
                   style={{
-                    color: "rgb(230, 140, 15)",
-                    justifyContent: "start",
-                    display: "flex",
-                    paddingLeft: "20px",
+                    display:"flex",
+                    flexDirection:"row",
+                    height:"40px",
+                    width:"100%",
+                    justifyContent:"start"
                   }}
                 >
-                  Qualification : {data.Qualification}
-                </h2>
-                <h2
+                  <div className="profiledata">Qualification</div> <div className="profiledata">: {data.Qualification}</div>
+                </div>
+                <div
                   style={{
-                    color: "rgb(230, 140, 15)",
-                    justifyContent: "start",
-                    display: "flex",
-                    paddingLeft: "20px",
+                    display:"flex",
+                    flexDirection:"row",
+                    height:"40px",
+                    width:"100%",
+                    justifyContent:"start"
                   }}
                 >
-                  Current salary : {data.Current_salary}
-                </h2>
-                <h2
+                  <div className="profiledata">Current salary</div><div className="profiledata">: {data.Current_salary}</div>
+                </div>
+                <div
                   style={{
-                    color: "rgb(230, 140, 15)",
-                    justifyContent: "start",
-                    display: "flex",
-                    paddingLeft: "20px",
+                    display:"flex",
+                    flexDirection:"row",
+                    height:"40px",
+                    width:"100%",
+                    justifyContent:"start"
                   }}
                 >
-                  Address : {data.address}
-                </h2>
-                <h2
+                  <div className="profiledata">Address</div> <div className="profiledata">: {data.address}</div>
+                </div>
+                <div
                   style={{
-                    color: "rgb(230, 140, 15)",
-                    justifyContent: "start",
-                    display: "flex",
-                    paddingLeft: "20px",
+                    display:"flex",
+                    flexDirection:"row",
+                    height:"40px",
+                    width:"100%",
+                    justifyContent:"start"
                   }}
                 >
-                  Current Organization : {data.current_org}
-                </h2>
-                <h2
+                  <div className="profiledata">Current Organization</div> <div className="profiledata">: {data.current_org}</div>
+                </div>
+                <div
                   style={{
-                    color: "rgb(230, 140, 15)",
-                    justifyContent: "start",
-                    display: "flex",
-                    paddingLeft: "20px",
+                    display:"flex",
+                    flexDirection:"row",
+                    height:"40px",
+                    width:"100%",
+                    justifyContent:"start"
                   }}
                 >
-                  Salary goal for next 1 year : {data.salary_goal_1_year}
-                </h2>
-                <h2
+                  <div className="profiledata">Salary goal for next 1 year</div> <div className="profiledata">: {data.salary_goal_1_year}</div>
+                </div>
+                <div
                   style={{
-                    color: "rgb(230, 140, 15)",
-                    justifyContent: "start",
-                    display: "flex",
-                    paddingLeft: "20px",
+                    display:"flex",
+                    flexDirection:"row",
+                    height:"40px",
+                    width:"100%",
+                    justifyContent:"start"
                   }}
                 >
-                  Salary goal for next 3 year : {data.salary_goal_3_year}
-                </h2>
+                  <div className="profiledata">Salary goal for next 3 year</div> <div className="profiledata">: {data.salary_goal_3_year}</div>
+                </div>
               </div>
               <div className="profileimg">
                 <img
@@ -320,6 +330,7 @@ export default function Dashboard(props) {
                     <td>{data.Remaining_attempt}</td>
                     <td className="tdBtn">
                       <button
+                      disabled={parseInt(data.Remaining_attempt)===0}
                         className="tableButton"
                         onClick={handleclickattempt}
                       >
@@ -374,7 +385,7 @@ export default function Dashboard(props) {
         </div>
       </div>
       <div className="Modal" id="EditProfileForm">
-        <span onClick={handlemodalclose} class="close">&times;</span>
+        <span onClick={handlemodalclose} classname="close">&times;</span>
         <div className="Form4">
           <h2 className="Heading">Edit Profile</h2>
           <div className="FormRow">

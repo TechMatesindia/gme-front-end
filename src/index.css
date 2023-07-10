@@ -656,3 +656,19 @@ label{
   text-decoration: none;
   cursor: pointer;
 }
+.InstructBtn{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  justify-content: space-around;
+  align-items: center;
+}
+.profiledata{
+  color: rgb(230, 140, 15);
+  font-size: 30px;
+  height: 100%;
+  width: 35%;
+  padding-left:10px ;
+  display: flex;
+  justify-content: start;
+}

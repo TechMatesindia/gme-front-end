@@ -8,10 +8,13 @@ export default function ExamInstructions() {
   console.log(id);
   const navigate = useNavigate();
   const handlestartexam = () => {
-    navigate("/exam",{state:{id:id}}, { replace: true });
+    navigate("/exam",{state:{id:id},replace: true});
+  };
+  const handleDashboard = () => {
+    navigate("/dashboard/"+id,{state:{id:id},replace: true});
   };
   const handleLogout = () => {
-    navigate("/login", { replace: false });
+    navigate("/login", { replace: true });
   };
   return (
     <>
@@ -47,7 +50,10 @@ export default function ExamInstructions() {
               <p className="InstructionsFooter">Good luck! Start the exam by clicking the "Next" button for the first question.</p>
             </div>
           </div>
+          <div className="InstructBtn">
+          <button className="tableButton" onClick={handleDashboard}>Dashboard</button>
           <button className="tableButton" onClick={handlestartexam}>Start Exam</button>
+          </div>
         </div>
       </div>
       <div className="Footer">

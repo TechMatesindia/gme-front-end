@@ -137,7 +137,7 @@ export default function ExamPage(props) {
       });
     
 
-    navigate("/Result", { state: { id:id } });
+    navigate("/Result", { state: { id:id },replace:true });
   };
 
   const handleclickqbox = (k) => {
@@ -241,7 +241,6 @@ export default function ExamPage(props) {
                       className="inputcheck"
                       type="radio"
                       value={"A"}
-                     
                     ></input>
                     <label className="checklabel" htmlFor="choice1">
                       A: {dt.A}
@@ -249,7 +248,7 @@ export default function ExamPage(props) {
                   </div>
                   <div className="RadioBtn">
                     <input
-                      name="choice2"
+                      name="choice1"
                       className="inputcheck"
                       type="radio"
                       value={"B"}
@@ -261,7 +260,7 @@ export default function ExamPage(props) {
                   </div>
                   <div className="RadioBtn">
                     <input
-                      name="choice3"
+                      name="choice1"
                       className="inputcheck"
                       type="radio"
                       value={"C"}
@@ -273,7 +272,7 @@ export default function ExamPage(props) {
                   </div>
                   <div className="RadioBtn">
                     <input
-                      name="choice4"
+                      name="choice1"
                       className="inputcheck"
                       type="radio"
                       value={"D"}

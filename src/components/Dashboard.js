@@ -277,7 +277,7 @@ export default function Dashboard(props) {
               </div>
               <div className="profileimg">
                 <img
-                  src={'http://localhost:5000/image/' + id}
+                  src={'http://'+API_URL+'/image/' + id}
                   alt=""
                   id="profilepic"
                 />

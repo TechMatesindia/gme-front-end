@@ -57,7 +57,7 @@ export default function Login() {
           <input
             className="Input"
             type="text"
-            placeholder="Username"
+            placeholder="Email"
             value={Username}
             onChange={handleusernamechange}
           ></input>

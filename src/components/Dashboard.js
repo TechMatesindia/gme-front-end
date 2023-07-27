@@ -324,7 +324,7 @@ export default function Dashboard(props) {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  {data.exams?<tr>
                     <td>1</td>
                     <td>{data.exams}</td>
                     <td>{data.Remaining_attempt}</td>
@@ -337,7 +337,7 @@ export default function Dashboard(props) {
                         Attempt
                       </button>
                     </td>
-                  </tr>
+                  </tr>:null}
                 </tbody>
               </table>
             </div>
@@ -360,25 +360,16 @@ export default function Dashboard(props) {
                   <tr>
                     <th>S.No.</th>
                     <th>Exams</th>
-                    <th>Action</th>
+                    <th>Marks</th>
                   </tr>
                 </thead>
-                {/* <tbody>
-                  <tr>
+                <tbody>
+                  {data.marks?<tr>
                     <td>1</td>
                     <td>{data.exams}</td>
-                    <td className="tdBtn">
-                      <button className="tableButton">Generate Report</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Six Sigma Green Belt</td>
-                    <td className="tdBtn">
-                      <button className="tableButton">Generate Report</button>
-                    </td>
-                  </tr>
-                </tbody> */}
+                    <td>{data.marks}/100</td>
+                  </tr>:null}
+                </tbody>
               </table>
             </div>
           </div>

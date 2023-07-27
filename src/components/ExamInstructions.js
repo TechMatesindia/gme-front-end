@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import {API_URL} from "./apiConfig"
 import axios from "axios";
 
 export default function ExamInstructions() {
@@ -8,6 +9,7 @@ export default function ExamInstructions() {
   console.log(id);
   const navigate = useNavigate();
   const handlestartexam = () => {
+    axios.post(API_URL+"/remaining/"+id)
     navigate("/exam",{state:{id:id},replace: true});
   };
   const handleDashboard = () => {
@@ -39,7 +41,7 @@ export default function ExamInstructions() {
                 <li>You can navigate between questions using the "Prev" and "Next" buttons.</li>
                 <li> Once you have selected an answer for a question, it will be automatically saved.</li>
                 <li> You can also submit your answers before the exam time is up.</li>
-                <li>The exam has a total duration of 75 minutes.</li>
+                <li>The exam has a total duration of 2.5 hours.</li>
                 <li>You can see the remaining time displayed at the top of question navigation window.</li>
                 <li> When the time runs out, you will be automatically redirected to the login page.</li>
                 <li>Ensure that you have completed all the questions before the time expires.</li>

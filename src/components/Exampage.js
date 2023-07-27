@@ -114,7 +114,7 @@ export default function ExamPage(props) {
     for (let i = 0; i < questions.length; i++) {
       Answers.forEach((a) => {
         if (a.qn === i && a.selected === questions[i].Answer) {
-          marks += 2;
+          marks += 1;
         }
       });
     }

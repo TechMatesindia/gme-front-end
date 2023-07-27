@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Timer() {
     const navigate = useNavigate();
-    const [remainingTime, setRemainingTime] = useState(4500);
+    const [remainingTime, setRemainingTime] = useState(9000);
 
     useEffect(() => {
         const timer = setInterval(() => {

@@ -15,7 +15,6 @@ export default function Result() {
     const url=API_URL+"/results/"
     const resp = axios.get(url+id)
     .then((resp)=> setmarks(resp.data.marks))
-    console.log(marks);
     const p = (marks * 100) / 100;
     let r = null;
     if (p < 70) {

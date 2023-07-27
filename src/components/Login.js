@@ -24,7 +24,6 @@ export default function Login() {
     data["email"] = Username;
     data["password"] = password;
     const object = JSON.stringify(data);
-    console.log(object);
     const url=API_URL+"/login"
     const res= await axios.post(url, data);
     if (res.data.message==="Login Successful"){

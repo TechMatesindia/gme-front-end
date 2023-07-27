@@ -19,7 +19,6 @@ export default function Dashboard(props) {
   const [salgoal3, setsalgoal3] = useState();
 
   const id = location.state.id;
-  console.log(id);
 
   const handleaddresschange = (e) => {
     setaddress(e.target.value);
@@ -118,7 +117,6 @@ export default function Dashboard(props) {
     document.getElementById("Exam").style.display = "none";
     document.getElementById("Results").style.display = "flex";
   };
-  console.log(data);
   if (!data) return null;
   return (
     <>

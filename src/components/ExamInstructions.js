@@ -6,7 +6,6 @@ import axios from "axios";
 export default function ExamInstructions() {
   const location = useLocation();
   const id = location.state.id;
-  console.log(id);
   const navigate = useNavigate();
   const handlestartexam = () => {
     axios.post(API_URL+"/remaining/"+id)

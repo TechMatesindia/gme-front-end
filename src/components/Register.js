@@ -43,7 +43,6 @@ export default function Register() {
     data["password"] = password;
     data["DOB"]=DOB;
     data["Contact_No"]=Contact;
-    console.log(data);
     const url=API_URL+"/register"
     const res=await axios.post(url, data)
     if(res.data.message==="Registration successful"){

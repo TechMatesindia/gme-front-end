@@ -8,7 +8,6 @@ import {API_URL} from "./apiConfig"
 export default function ExamPage(props) {
   const location = useLocation();
   const id = location.state.id;
-  console.log(id);
   const navigate = useNavigate();
   const [qn, setqn] = useState(0);
   const [A, setA] = useState(false);
@@ -28,7 +27,6 @@ export default function ExamPage(props) {
         const url =API_URL+"/questions"
         const response = await axios.get(url);
         setQuestions(response.data);
-        console.log(response.data);
       } catch (error) {
         console.error("Error fetching questions:", error);
       }
@@ -38,7 +36,6 @@ export default function ExamPage(props) {
   useEffect(() => {
     const MyInterval=setInterval(()=>{
       Answers.map((dt) => {
-        console.log(dt)
         var element = document.getElementById("qbox" + dt.qn)
         if(dt.flag === false && dt.selected === null) {
           element.style.backgroundColor = "gray"
@@ -84,7 +81,6 @@ export default function ExamPage(props) {
   const handleclickflag = (k) =>{
     var i = false;
     Answers.map((fg) =>{
-      console.log(fg);
       if (fg.qn === qn){
         fg.flag=!fg.flag;
         i=true
@@ -123,9 +119,7 @@ export default function ExamPage(props) {
 
   const handleclicksubmit = async() => {
     const marks = await calculateScore();
-    console.log(marks);
     const data = {marks:marks}
-    console.log(data);
     const url =API_URL+"/results/"
     axios.post(url+id,data)
       .then((response) => response.json())
@@ -209,7 +203,6 @@ export default function ExamPage(props) {
 
 
   // calculateScore();
-  console.log(Answers);
 
   return (
     <>

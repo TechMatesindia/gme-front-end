@@ -40,7 +40,7 @@ export default function ExamInstructions() {
                 <li>You can navigate between questions using the "Prev" and "Next" buttons.</li>
                 <li> Once you have selected an answer for a question, it will be automatically saved.</li>
                 <li> You can also submit your answers before the exam time is up.</li>
-                <li>The exam has a total duration of 2.5 hours.</li>
+                <li>The exam has a total duration of 75 minutes.</li>
                 <li>You can see the remaining time displayed at the top of question navigation window.</li>
                 <li> When the time runs out, you will be automatically redirected to the login page.</li>
                 <li>Ensure that you have completed all the questions before the time expires.</li>

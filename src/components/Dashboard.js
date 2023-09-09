@@ -290,7 +290,7 @@ export default function Dashboard(props) {
           <div id="Courses">
             <h2
               style={{
-                color: "rgb(230, 140, 15)",
+                color: "#c1902d",
                 justifyContent: "start",
                 display: "flex",
                 paddingLeft: "20px",
@@ -302,7 +302,7 @@ export default function Dashboard(props) {
           <div id="Exam">
             <h2
               style={{
-                color: "rgb(230, 140, 15)",
+                color: "#c1902d",
                 justifyContent: "start",
                 display: "flex",
                 marginTop: "10px",
@@ -343,7 +343,7 @@ export default function Dashboard(props) {
           <div id="Results">
             <h2
               style={{
-                color: "rgb(230, 140, 15)",
+                color: "#c1902d",
                 justifyContent: "start",
                 display: "flex",
                 marginTop: "10px",
@@ -365,7 +365,7 @@ export default function Dashboard(props) {
                   {data.marks?<tr>
                     <td>1</td>
                     <td>{data.exams}</td>
-                    <td>{data.marks}/100</td>
+                    <td>{data.marks}%</td>
                   </tr>:null}
                 </tbody>
               </table>

@@ -52,7 +52,7 @@ export default function Result() {
       </div>
       <div className="FormBody">
         <p className="Heading">
-          <u>Marks: {marks}/100</u>
+          <u>Marks: {marks}%</u>
           <br />
           <u>Percentage: {percentage}%</u>
           <br />

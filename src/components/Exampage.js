@@ -15,6 +15,7 @@ export default function ExamPage(props) {
   const [C, setC] = useState(false);
   const [D, setD] = useState(false);
   const [selected, setselected] = useState();
+  const [anskey, setanskey] = useState();
   const [questions, setQuestions] = useState();
   const [Answers, setAnswers] = useState([]);
   const [Flags, setFlags] = useState([]);
@@ -106,15 +107,25 @@ export default function ExamPage(props) {
 
   const calculateScore = () =>{
     let marks = 0;
-
     for (let i = 0; i < questions.length; i++) {
       Answers.forEach((a) => {
         if (a.qn === i && a.selected === questions[i].Answer) {
-          marks += 1;
+          marks += 2;
         }
       });
     }
     return marks;
+  }
+  const answerkey = () =>{
+    const ans=[];
+    for (let i = 0; i < questions.length; i++) {
+      Answers.forEach((a) => {
+        if (a.qn === i){
+          ans.push({ques:questions[i].Questions,answer:questions[i].Answer,selected:a.selected})
+         }
+      });
+    }
+    return ans;
   }
 
   const handleclicksubmit = async() => {
@@ -122,16 +133,17 @@ export default function ExamPage(props) {
     const data = {marks:marks}
     const url =API_URL+"/results/"
     axios.post(url+id,data)
-      .then((response) => response.json())
       .then((data) => {
         console.log(data);
       })
       .catch((error) => {
         console.error(error);
       });
-    
+    const data2={jsondata:await answerkey()}
+    const url2 =API_URL+"/questiondata/"
+    axios.post(url2+id,data2)
 
-    navigate("/Result", { state: { id:id },replace:true });
+   navigate("/Result", { state: { id:id },replace:true });
   };
 
   const handleclickqbox = (k) => {
